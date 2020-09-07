@@ -16,7 +16,7 @@
 </dependency>
 ```
 
-### modoule
+### moudle
 >1. [freemarker-demo/FreeMarkerDemo.java](./freemarker-demo/src/main/java/cn/anlzou/FreeMarkerDemo.java)
 
 ### 内容
