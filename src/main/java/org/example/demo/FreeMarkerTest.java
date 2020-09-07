@@ -11,12 +11,13 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 
+import java.awt.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.List;
 
 public class FreeMarkerTest {
     public static void main(String[] args) throws IOException, TemplateException {
@@ -27,7 +28,7 @@ public class FreeMarkerTest {
         Configuration configuration = new Configuration(Configuration.getVersion());
 
         //2.设置模板文件所在的路径
-        configuration.setDirectoryForTemplateLoading(new File("C:\\Users\\Administrator\\Desktop\\code\\javaee\\freemarker-test\\src\\main"));
+        configuration.setDirectoryForTemplateLoading(new File("C:\\Users\\Administrator\\Desktop\\code\\javaee\\freemarker-test\\src\\main\\resources\\"));
 
         //3.设置模板文件的字符集
         configuration.setDefaultEncoding("UTF-8");
@@ -43,11 +44,34 @@ public class FreeMarkerTest {
          * */
         //5.创建数据
         Map map = new HashMap();
+
         map.put("name","there");
         map.put("company","XiaoMi");
 
+        map.put("success",true);
+
+//list
+        Map goods1 = new HashMap();
+        goods1.put("name","apple");
+        goods1.put("price","9.6");
+
+        Map goods2 = new HashMap();
+        goods2.put("name","mango");
+        goods2.put("price","3.4");
+
+        List list = new ArrayList();
+        list.add(goods1);
+        list.add(goods2);
+        map.put("goodsList",list);
+
+//日期
+        map.put("today",new Date());
+
+//        类型转换
+        map.put("point",123456789);
+
         //6.穿件write对象写入模板信息
-        Writer out = new FileWriter(new File("C:\\Users\\Administrator\\Desktop\\code\\javaee\\freemarker-file\\file.html"));
+        Writer out = new FileWriter(new File("C:\\Users\\Administrator\\Desktop\\code\\javaee\\freemarker-test\\file\\demo.html"));
         template.process(map,out);
 
         //7.关闭流
