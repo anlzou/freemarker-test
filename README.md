@@ -1,12 +1,12 @@
 # FreeMarker-test
 >[2小时学习Spring整合Freemarker项目实战](http://e-learning.51cto.com/course/21934)
-##### idea create project step
+### idea create project step
 1. New->Moudule->Maven
     - [x] Create from archetype
         - org.apache.maven.archetypes:maven-archetype-quickstart
 2. maven选择本地仓库路径
 
-##### pom.xml
+### pom.xml
 ```xml
 <!--添加freemarker jar 包-->
 <dependency>
@@ -16,12 +16,13 @@
 </dependency>
 ```
 
-##### Demo
->1. [FreeMarkerTest.java](./src/main/java/org/example/demo/FreeMarkerTest.java)
+### modoule
+>1. [freemarker-demo/FreeMarkerDemo.java](./freemarker-demo/src/main/java/cn/anlzou/FreeMarkerDemo.java)
 
-##### 内容
+### 内容
 <details><summary>目录</summary>
 
+#### freemarker-demo 
 - 1  今日课程目标01:34
 - 2  Freemarker简介04:21
 - 3  入门小demo12:08
@@ -31,6 +32,7 @@
 - 7  常用指令-日期处理03:29
 - 8  数字转换为字符串02:59
 - 9  空字符串处理02:46
+
 - 10  搭建生成静态页面工程-后台18:31
 - 11  生成静态页面08:54
 - 12  模板模块化引入02:37

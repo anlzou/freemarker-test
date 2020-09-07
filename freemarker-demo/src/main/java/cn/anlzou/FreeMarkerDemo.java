@@ -19,16 +19,15 @@ import java.io.Writer;
 import java.util.*;
 import java.util.List;
 
-public class FreeMarkerTest {
+public class FreeMarkerDemo {
     public static void main(String[] args) throws IOException, TemplateException {
-        /**FreeMarker 使用步骤
-         * */
+        //----FreeMarker 使用步骤----//
 
         //1.创建Configruction对象,定义使用freemarker版本信息
         Configuration configuration = new Configuration(Configuration.getVersion());
 
         //2.设置模板文件所在的路径
-        configuration.setDirectoryForTemplateLoading(new File("C:\\Users\\Administrator\\Desktop\\code\\javaee\\freemarker-test\\src\\main\\resources\\"));
+        configuration.setDirectoryForTemplateLoading(new File("C:\\Users\\Administrator\\Desktop\\code\\javaee\\freemarker-test\\freemarker-demo\\src\\main\\resources\\template"));
 
         //3.设置模板文件的字符集
         configuration.setDefaultEncoding("UTF-8");
@@ -50,7 +49,7 @@ public class FreeMarkerTest {
 
         map.put("success",true);
 
-//list
+        //list
         Map goods1 = new HashMap();
         goods1.put("name","apple");
         goods1.put("price","9.6");
@@ -64,14 +63,14 @@ public class FreeMarkerTest {
         list.add(goods2);
         map.put("goodsList",list);
 
-//日期
+        //日期
         map.put("today",new Date());
 
-//        类型转换
+        //类型转换
         map.put("point",123456789);
 
         //6.穿件write对象写入模板信息
-        Writer out = new FileWriter(new File("C:\\Users\\Administrator\\Desktop\\code\\javaee\\freemarker-test\\file\\demo.html"));
+        Writer out = new FileWriter(new File("C:\\Users\\Administrator\\Desktop\\code\\javaee\\freemarker-test\\output-file\\demo.html"));
         template.process(map,out);
 
         //7.关闭流
